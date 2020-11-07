@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+//main function to run the app
 void main() => runApp(
       MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -13,11 +14,13 @@ void main() => runApp(
       ),
     );
 
+//statefull widget
 class MyHome extends StatefulWidget {
   @override
   _MyHomeState createState() => _MyHomeState();
 }
 
+//MyHome state class
 class _MyHomeState extends State<MyHome> {
   var _currencies = ["Dinars", "Dollars", "Euros", "Rouble"];
   final _mininmumPadding = 5.0;
@@ -29,7 +32,8 @@ class _MyHomeState extends State<MyHome> {
     super.initState();
     _currentItemSelected = _currencies[0];
   }
-
+  
+  //to get inputs from user
   TextEditingController principales = TextEditingController();
   TextEditingController rate = TextEditingController();
   TextEditingController terms = TextEditingController();
@@ -61,6 +65,7 @@ class _MyHomeState extends State<MyHome> {
                 controller: principales,
                 keyboardType: TextInputType.number,
                 style: textstyle,
+                    
                 // ignore: missing_return
                 validator: (String value) {
                   if (value.isEmpty) {
